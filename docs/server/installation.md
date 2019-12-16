@@ -45,7 +45,7 @@ A tar archive is an already builded relase, you you just need to have all requir
 
 ## Deploy on kubernetes (helm)
 
-You find more information [here](/server/installation-helm) on how to deploy balloon to k8s using helm.
+You find more information [here](/tubee-docs/server/installation-helm) on how to deploy balloon to k8s using helm.
 
 
 ## Manually install from source
