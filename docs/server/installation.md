@@ -19,10 +19,10 @@ Since the installation is not the same for different host os and docker can be s
 the docker documentation on how to install [docker](https://docs.docker.com/install) and [docker-compose](https://docs.docker.com/compose/install).
 
 **Requirements**:
+
 * docker
 * docker-compose
 * curl
-```
 
 ```
 mkdir tubee; cd tubee
