@@ -5,8 +5,7 @@ This is a step-by-step tutorial how to correctly deploy the tubee server.
 There are multiple supported ways to deploy tubee:
 
 * Docker (docker-compose)
-* Container orchestration plattform like [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/))
-* helm
+* [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) using [helm](https://github.com/gyselroth/balloon-helm)
 * Manually as tar archive
 * Compile manually from source
 
@@ -24,7 +23,6 @@ the docker documentation on how to install [docker](https://docs.docker.com/inst
 * docker-compose
 * curl
 ```
-
 
 ```
 mkdir tubee; cd tubee
@@ -47,7 +45,8 @@ A tar archive is an already builded relase, you you just need to have all requir
 
 ## Deploy on kubernetes (helm)
 
-See helm
+You find more information [here](/server/installation-helm) on how to deploy balloon to k8s using helm.
+
 
 ## Manually install from source
 
