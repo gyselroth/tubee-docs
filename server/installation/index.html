@@ -632,6 +632,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-the-tar-archive" class="md-nav__link">
+    Using the tar archive
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-on-kubernetes-helm" class="md-nav__link">
+    Deploy on kubernetes (helm)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manually-install-from-source" class="md-nav__link">
+    Manually install from source
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-tubee-server" class="md-nav__link">
+    Install tubee server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -759,6 +793,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-the-tar-archive" class="md-nav__link">
+    Using the tar archive
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-on-kubernetes-helm" class="md-nav__link">
+    Deploy on kubernetes (helm)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manually-install-from-source" class="md-nav__link">
+    Manually install from source
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-tubee-server" class="md-nav__link">
+    Install tubee server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -791,70 +859,61 @@ Deploy tubee using debian packages, tar archives or even installing from source 
 <p>The easiest, fastest and recommended way to deploy a tubee environment is to spin it up using docker and docker-compose.
 Since the installation is not the same for different host os and docker can be started on Linux, Windows and Mac please visit 
 the docker documentation on how to install <a href="https://docs.docker.com/install">docker</a> and <a href="https://docs.docker.com/compose/install">docker-compose</a>.</p>
-<p><strong>Requirements</strong>:
-* docker
-* docker-compose
-* curl</p>
-<pre><code>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>docker</li>
+<li>docker-compose</li>
+<li>curl</li>
+</ul>
+<pre><code>mkdir tubee; cd tubee
+curl https://raw.githubusercontent.com/gyselroth/tubee/master/packaging/docker-compose/docker-compose.yaml &gt; docker-compose.yaml
+docker-compose up
 </code></pre>
 
-<p>mkdir tubee; cd tubee
-curl https://raw.githubusercontent.com/gyselroth/tubee/master/packaging/docker-compose/docker-compose.yaml &gt; docker-compose.yaml
-docker-compose up</p>
-<pre><code>
-&gt;**Note** All tubee containers provide a version tag besides `latest`. It is best practice to use an exact version of a service instead the latest tag in production environment.
-The containers provide a `latest-unstable` tag for the tubee-jobs, tubee and tubee-web container. It is in no way reccomened to use pre-releases in production environments! 
-If you want to install beta and alpha versions replace `latest` with `latest-unstable` or specify an exact version tag. Pre-releases are only ment for testing purposes and are in no way recommended in production environements!
-
-The default user is:&lt;br/&gt;
-Username: admin &lt;br/&gt;
-Password: admin &lt;br/&gt;
-
-
-## Using the tar archive
-Instead a deb package you may also use a tar archive and install tubee manually on your system. 
-A tar archive is an already builded relase, you you just need to have all requirements installed on your system, you may have a look at [Manually install from source](#manually-install-from-source).
-
-## Deploy on kubernetes (helm)
-
-You find more information [here](/server/installation-helm) on how to deploy balloon to k8s using helm.
-
-
-## Manually install from source
-
-This topic is only for advanced users or developers and describes how to deploy tubee by installing from source.
-If you are a developer please also continue reading [this](https://github.com/gyselroth/tubee/blob/master/CONTRIBUTING.md) article.
-
-**Requirements**:
-
-* posix based operating system (Basically every linux/unix)
-* make
-* [comoser](https://getcomposer.org/download/)
-* git
-* php &gt;= 7.2
-* php ext-mongodb
-* php ext-curl
-* php ext-mbstring
-* php ext-posix
-* php ext-pnctl
-* php ext-apcu
-* php ext-sysvmsg
-
-**Optional requirements**:
-
-* php ext-imagick (If you want to use The ImageEndpoint)
-* php ext-ldap (If you want to use LDAP authentication and/or the LdapEndpoint)
-* php ext-smb (If you want to use the SmbStorage)
-* php ext-xml (If you want to use the XmlEndpoint)
-* php ext-pdo (If you want to use the PdoEndpoint)
-* php ext-mysql (If you want ot use the MysqlEndpoint)
-
-This will only install the tubee server. Dependencies such as MongoDB do not get installed.
-You can install those dependencies either by using distributed packages, see [Debian based distribution](#debian-based-distribution) or by installing them seperately from source.
-
-### Install tubee server
-```sh
-git clone https://github.com/gyselroth/tubee.git
+<blockquote>
+<p><strong>Note</strong> All tubee containers provide a version tag besides <code>latest</code>. It is best practice to use an exact version of a service instead the latest tag in production environment.
+The containers provide a <code>latest-unstable</code> tag for the tubee-jobs, tubee and tubee-web container. It is in no way reccomened to use pre-releases in production environments! 
+If you want to install beta and alpha versions replace <code>latest</code> with <code>latest-unstable</code> or specify an exact version tag. Pre-releases are only ment for testing purposes and are in no way recommended in production environements!</p>
+</blockquote>
+<p>The default user is:<br/>
+Username: admin <br/>
+Password: admin <br/></p>
+<h2 id="using-the-tar-archive">Using the tar archive</h2>
+<p>Instead a deb package you may also use a tar archive and install tubee manually on your system. 
+A tar archive is an already builded relase, you you just need to have all requirements installed on your system, you may have a look at <a href="#manually-install-from-source">Manually install from source</a>.</p>
+<h2 id="deploy-on-kubernetes-helm">Deploy on kubernetes (helm)</h2>
+<p>You find more information <a href="/server/installation-helm">here</a> on how to deploy balloon to k8s using helm.</p>
+<h2 id="manually-install-from-source">Manually install from source</h2>
+<p>This topic is only for advanced users or developers and describes how to deploy tubee by installing from source.
+If you are a developer please also continue reading <a href="https://github.com/gyselroth/tubee/blob/master/CONTRIBUTING.md">this</a> article.</p>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>posix based operating system (Basically every linux/unix)</li>
+<li>make</li>
+<li><a href="https://getcomposer.org/download/">comoser</a></li>
+<li>git</li>
+<li>php &gt;= 7.2</li>
+<li>php ext-mongodb</li>
+<li>php ext-curl</li>
+<li>php ext-mbstring</li>
+<li>php ext-posix</li>
+<li>php ext-pnctl</li>
+<li>php ext-apcu</li>
+<li>php ext-sysvmsg</li>
+</ul>
+<p><strong>Optional requirements</strong>:</p>
+<ul>
+<li>php ext-imagick (If you want to use The ImageEndpoint)</li>
+<li>php ext-ldap (If you want to use LDAP authentication and/or the LdapEndpoint)</li>
+<li>php ext-smb (If you want to use the SmbStorage)</li>
+<li>php ext-xml (If you want to use the XmlEndpoint)</li>
+<li>php ext-pdo (If you want to use the PdoEndpoint)</li>
+<li>php ext-mysql (If you want ot use the MysqlEndpoint)</li>
+</ul>
+<p>This will only install the tubee server. Dependencies such as MongoDB do not get installed.
+You can install those dependencies either by using distributed packages, see <a href="#debian-based-distribution">Debian based distribution</a> or by installing them seperately from source.</p>
+<h3 id="install-tubee-server">Install tubee server</h3>
+<pre><code class="sh">git clone https://github.com/gyselroth/tubee.git
 cd tubee
 make install
 </code></pre>
